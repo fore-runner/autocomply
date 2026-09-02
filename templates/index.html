@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AutoComply — Legal Metrology Compliance Scanner</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">AC</span> AutoComply</div>
+  <nav>
+    <a href="#scan" class="active">Scan product</a>
+    <a href="#history">History</a>
+  </nav>
+</header>
+
+<main>
+  <section class="stats" id="stats">
+    <div class="stat-card"><p class="label">Products scanned</p><p class="value" id="stat-total">–</p></div>
+    <div class="stat-card"><p class="label">Compliant</p><p class="value ok" id="stat-compliant">–</p></div>
+    <div class="stat-card"><p class="label">Non-compliant</p><p class="value bad" id="stat-noncompliant">–</p></div>
+    <div class="stat-card"><p class="label">Needs review</p><p class="value warn" id="stat-review">–</p></div>
+  </section>
+
+  <section class="panel" id="scan">
+    <h2>Scan a product label</h2>
+    <form id="scan-form">
+      <div class="field-row">
+        <label>Product name
+          <input type="text" name="product_name" placeholder="e.g. Nutri biscuits 200g" required />
+        </label>
+        <label>Package width, mm (for font-size calibration)
+          <input type="number" name="package_width_mm" placeholder="e.g. 90" min="1" step="0.1" required />
+        </label>
+      </div>
+      <div class="upload-box" id="upload-box">
+        <input type="file" name="image" id="image-input" accept="image/*" required />
+        <p id="upload-hint"><i class="ti ti-cloud-upload"></i> Click or drop a label image</p>
+        <img id="preview" style="display:none" />
+      </div>
+      <button type="submit" id="scan-btn">Run compliance check</button>
+    </form>
+    <div id="result-area"></div>
+  </section>
+
+  <section class="panel" id="history">
+    <h2>Scan history</h2>
+    <table id="history-table">
+      <thead><tr><th>Product</th><th>Scanned at</th><th>Status</th><th>Score</th><th></th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+</main>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
