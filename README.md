@@ -1,7 +1,8 @@
 # AutoComply — Backend (Python / Flask)
 
-Working backend for the Legal Metrology compliance-scanning prototype
-(Solution 3: AI extraction + CV font measurement + deterministic rule engine).
+Flask backend for a Legal Metrology compliance-scanning prototype. It processes product-label images using OCR, extracts key declarations, performs computer-vision-based font-size measurements, applies rule-based compliance checks, stores scan history in SQLite, and generates PDF reports.
+(Image → OCR → Declaration extraction (Regex) → OpenCV measurement → Rule engine → Compliance result → SQLite → PDF report)
+
 
 ## What it does
 
