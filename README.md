@@ -1,4 +1,4 @@
-# autocomply
+# Autocomply
 
 A hackathon project that analyzes product label images and identifies potential compliance issues.
 
